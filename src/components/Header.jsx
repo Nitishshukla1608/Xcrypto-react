@@ -13,7 +13,7 @@ const Header = () => {
   spacing="6"   
 >
   <Button variant="unstyled" color="white">
-    <Link to="/"> Home </Link>
+    <Link to="/"> Home You </Link>
   </Button>
   <Button variant="unstyled" color="white">
     <Link to="/exchanges"> Exchanges </Link>
