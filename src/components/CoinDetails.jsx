@@ -3,9 +3,9 @@ import {Badge, Box, Button, Container, HStack, Image, Progress, Radio, RadioGrou
 import Loading from './Loading';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import { server } from '..';
 import Chart from "../components/Chart"
 import ErrorComponent from './ErrorComponent';
+export const server = "https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=30"
 
 const CoinDetails = () => {
 
@@ -67,26 +67,26 @@ const CoinDetails = () => {
 
 
 
-
-  useEffect(() => {
-    const fetchCoin = async () => {
-     try {
-      const {data} = await axios.get(`${server}/coins/${params.id}`);
-      
+useEffect(() => {
+  const fetchCoin = async () => {
+    try {
+      const { data } = await axios.get(`${server}/coins/${params.id}`);
       const { data: chartData } = await axios.get(
         `${server}/coins/${params.id}/market_chart?vs_currency=${currency}&days=${days}`
       );
+
       setCoins(data);
-      setLoading(false);
       setChartArray(chartData.prices);
-     } catch (error) {
+      setLoading(false);
+    } catch (error) {
       setError(true);
       setLoading(false);
-     }
     }
-    fetchCoin();
-  }, [params.id, currency, days])
-  
+  };
+
+  fetchCoin();
+}, [params.id, currency, days]);
+
   if(error) return <ErrorComponent message={"Some error occure0d"}/>;
 
 
@@ -121,7 +121,9 @@ const CoinDetails = () => {
           <VStack>
             <Text>
             Last Updated On{" "}
-              {Date(coins.market_data.last_updated).split("G")[0]}
+           {new Date(coins?.market_data?.last_updated).toLocaleString()
+}
+
             </Text>
             <Image src={coins.image.large}
             w={"16"}
@@ -207,4 +209,4 @@ const CustomBar = ({ high, low }) => (
 
 
 
-export default CoinDetails
+export default CoinDetails ;
