@@ -8,10 +8,10 @@ const Home = () => {
     <Box bgColor={"blackAlpha.900"} w={"full"} h={"85vh"}>
       <motion.div
         style={{
-          height: "80vh",
+          height: "65vh",
         }}
         animate={{
-          translateY: "20px",
+          translateY: "30px",
         }}
         transition={{
           duration: 2,
@@ -33,7 +33,7 @@ const Home = () => {
         textAlign={"center"}
         fontWeight={"thin"}
         color={"whiteAlpha.700"}
-        mt={"-20"}
+        mt={"-10"}
       >
         Xcrypto
       </Text>
