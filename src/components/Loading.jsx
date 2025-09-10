@@ -4,7 +4,7 @@ import React from 'react'
 const Loading = () => {
   return (
     <VStack h="90vh" justifyContent={"center"}>
-      <Box transform={"scale(3)"}>
+      <Box transform={"scale(2)"}>
         <Spinner size={"xl"}/>
       </Box>
     </VStack>
