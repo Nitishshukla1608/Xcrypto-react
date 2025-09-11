@@ -30,56 +30,65 @@ const Exchanges = () => {
   if (error) return <ErrorComponent message={"An error occured"}/>
 
   return (
-    <Container maxWidth={"container.xl"}>
-      {
-      loading ? (<Loading/>):(<>
-          <HStack wrap={"wrap"} justifyContent={"space-evenly"}>
-            {
-              exchange.map((i) => (
-                  <ExchangeCard 
-                  name={i.name}
-                  img={i.image}
-                  rank={i.trust_score_rank}
-                  url={i.url}
-                  />
-                ))
-            }
-          </HStack>
-      </>)
-    }
-    </Container>
+  <Container
+  w="100%"
+  minH="100vh"
+  bgColor="blackAlpha.900"
+  maxW="100%"
+  px={90}
+>
+  {loading ? (
+    <Loading />
+  ) : (
+    <HStack wrap="wrap" justifyContent="space-evenly">
+      {exchange.map((i) => (
+        <ExchangeCard
+          key={i.id}
+          name={i.name}
+          img={i.image}
+          rank={i.trust_score_rank}
+          url={i.url}
+        />
+      ))}
+    </HStack>
+  )}
+</Container>
+
   );
 };
 
 const ExchangeCard = ({ name, img, rank, url }) => (
-  <a href={url} target={"blank"}>
+  <a href={url} target="_blank" rel="noopener noreferrer">
     <VStack
-      w={"52"}
-      shadow={"lg"}
-      p={"8"}
-      borderRadius={"lg"}
-      transition={"all 0.3s"}
-      m={"4"}
-      css={{
-        "&:hover": {
-          transform: "scale(1.1)",
-        },
+      w="52"
+      p="8"
+      m="4"
+      borderRadius="lg"
+     // bg="rgba(255, 255, 255, 0.1)" // translucent white
+     bg="rgba(158, 239, 241, 0.1)"
+      color="white"                 // text color white for contrast
+      backdropFilter="blur(10px)"   // frosted glass blur
+      border="1px solid rgba(230, 194, 117, 0.2)" // subtle border
+      transition="all 0.3s"
+      _hover={{
+        transform: "scale(1.08)",
+        shadow: "0 4px 30px rgba(0,0,0,0.5)", // soft shadow on hover
       }}
     >
       <Image
         src={img}
-        w={"10"}
-        h={"10"}
-        objectFit={"contain"}
-        alt={"Exchange"}
+        w="10"
+        h="10"
+        objectFit="contain"
+        alt={name}
       />
-      <Heading size={"md"} noOfLines={1}>
+      <Heading size="md" noOfLines={1}>
         {rank}
       </Heading>
-
       <Text noOfLines={1}>{name}</Text>
     </VStack>
   </a>
 );
+
 
 export default Exchanges

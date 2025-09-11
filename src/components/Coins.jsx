@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { server } from "../index";
-import { Button, Container, HStack, Radio, RadioGroup } from "@chakra-ui/react";
+import { Button,Text, Container, HStack, Radio, RadioGroup } from "@chakra-ui/react";
 import Loader from "./Loading";
 import ErrorComponent from "./ErrorComponent";
 import CoinCard from "./CoinCard";
@@ -41,50 +41,82 @@ const Coins = () => {
 
   if (error) return <ErrorComponent message={"Error While Fetching Coins"} />;
 
-  return (
-    <Container maxW={"container.xl"}>
-      {loading ? (
-        <Loader />
-      ) : (
-        <>
-          <RadioGroup value={currency} onChange={setCurrency} p={"8"}>
-            <HStack spacing={"4"}>
-              <Radio value={"inr"}>INR</Radio>
-              <Radio value={"usd"}>USD</Radio>
-              <Radio value={"eur"}>EUR</Radio>
-            </HStack>
-          </RadioGroup>
+ return (
+  <Container
+   
+    bg="blackAlpha.900"  // dark background for entire container
+    minH="100vh"
 
-          <HStack wrap={"wrap"} justifyContent={"space-evenly"}>
-            {coins.map((i) => (
-              <CoinCard
-                id={i.id}
-                key={i.id}
-                name={i.name}
-                price={i.current_price}
-                img={i.image}
-                symbol={i.symbol}
-                currencySymbol={currencySymbol}
-              />
-            ))}
-          </HStack>
-
-          <HStack w={"full"} overflowX={"auto"} p={"8"}>
-            {btns.map((item, index) => (
-              <Button
-                key={index}
-                bgColor={"blackAlpha.900"}
-                color={"white"}
-                onClick={() => changePage(index + 1)}
+  maxW="100%"         // full screen height
+    px={90}
+  >
+    {loading ? (
+      <Loader />
+    ) : (
+      <>
+        {/* Currency Selection */}
+        <RadioGroup value={currency} onChange={setCurrency} p={4}>
+          <HStack spacing={6}>
+            {["INR", "USD", "EUR"].map((cur) => (
+              <Radio
+                key={cur}
+                value={cur.toLowerCase()}
+                size="lg"
+                colorScheme="yellow"  // gold selection
+                bg="white"             // card color white
+                borderRadius="md"
+                px={6}
+                py={3}
+                border="1px solid"
+                borderColor="gray.300"
+                _hover={{
+                  bg: "gray.100",
+                  transform: "scale(1.05)",
+                }}
               >
-                {index + 1}
-              </Button>
+                <Text color="black" fontWeight="semibold">
+                  {cur}
+                </Text>
+              </Radio>
             ))}
           </HStack>
-        </>
-      )}
-    </Container>
-  );
+        </RadioGroup>
+
+        {/* Coins Grid */}
+        <HStack wrap={"wrap"} justifyContent={"space-evenly"} mt={4}>
+          {coins.map((i) => (
+            <CoinCard
+              id={i.id}
+              key={i.id}
+              name={i.name}
+              price={i.current_price}
+              img={i.image}
+              symbol={i.symbol}
+              currencySymbol={currencySymbol}
+              bg="white"          // make card background white
+              color="black"       // text color black for contrast
+            />
+          ))}
+        </HStack>
+
+        {/* Pagination Buttons */}
+        <HStack w={"full"} overflowX={"auto"} p={4} mt={6}>
+          {btns.map((item, index) => (
+            <Button
+              key={index}
+              bgColor={"blackAlpha.900"}
+              color={"white"}
+              onClick={() => changePage(index + 1)}
+            >
+              {index + 1}
+            </Button>
+          ))}
+        </HStack>
+      </>
+    )}
+  </Container>
+);
+
 };
 
 export default Coins;
