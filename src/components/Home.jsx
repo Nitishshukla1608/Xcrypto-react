@@ -11,7 +11,7 @@ const Home = () => {
     <Box bgColor={"blackAlpha.900"} w={"full"} h={"100%"}>
       <motion.div
         style={{
-          height: "65vh",
+          height: "45vh",
         }}
         animate={{
           translateY: "30px",
