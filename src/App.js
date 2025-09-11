@@ -5,6 +5,7 @@ import CoinDetails from "./components/CoinDetails";
 import Exchanges from "./components/Exchanges";
 import Coins from "./components/Coins";
 import Footer from "./components/Footer"
+import XcryptoAuth from "./components/XcryptoAuth";
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="/coins" element={<Coins/>}/>
         <Route path="/exchanges" element={<Exchanges/>}/>
         <Route path="/coin/:id" element={<CoinDetails/>}/>
+                <Route path="/authform" element={<XcryptoAuth/>}/>
       </Routes>
       <Footer/>
     </Router>

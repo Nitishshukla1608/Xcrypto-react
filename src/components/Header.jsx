@@ -22,19 +22,16 @@ const Header = () => {
   <Button variant="unstyled" color="white">
     <Link to="/coins"> Coins </Link>
   </Button>
-
   <Spacer/>
 <Spacer />
 <Box pr="6">   
-<Button varient="unstyled"  bgColor="blackAlpha.900"  shadow="base"  >
-    <Link to="/account">  <FontAwesomeIcon icon={faUser} style={{ color: "white" }} size="lg" /></Link>
-</Button>
-</Box>
 
+    <Link to="/authform"> <FontAwesomeIcon icon={faUser} style={{ color: "white" }} size="lg" /></Link>
+
+</Box>
 </HStack>
     )
 }
-
 export default Header
 
 
