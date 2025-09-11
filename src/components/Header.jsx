@@ -13,7 +13,8 @@ const Header = () => {
   spacing="6"   
 >
   <Button variant="unstyled" color="white">
-    <Link to="/"> Home You </Link>
+    <Link to="/"> Home 
+     </Link>
   </Button>
   <Button variant="unstyled" color="white">
     <Link to="/exchanges"> Exchanges </Link>
@@ -21,9 +22,6 @@ const Header = () => {
   <Button variant="unstyled" color="white">
     <Link to="/coins"> Coins </Link>
   </Button>
-
-
-
 
   <Spacer/>
 <Spacer />
