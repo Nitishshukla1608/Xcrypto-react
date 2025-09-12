@@ -73,9 +73,19 @@ const Home = () => {
   {/* Features / Highlights */}
   <HStack spacing={10} wrap="wrap" justify="center" >
     <VStack spacing={2}>
-      <Box bg="yellow.400" p={3} borderRadius="full">
-        🚀
-      </Box>
+     <Box
+  as="a"
+  href="https://chainspect.app/dashboard?utm_source=chatgpt.com"
+  target="_blank"  // opens in a new tab
+  bg="yellow.400"
+  p={3}
+  cursor={"pointer"}
+  borderRadius="full"
+  _hover={{ cursor: "pointer", bg: "yellow.500" }}
+>
+  🚀
+</Box>
+
       <Text color="white" fontWeight="semibold">Fast Transactions</Text>
       <Text fontSize="sm" color="whiteAlpha.700" maxW="150px">
         Execute trades instantly with minimal delay.
@@ -83,9 +93,19 @@ const Home = () => {
     </VStack>
 
     <VStack spacing={2}>
-      <Box bg="yellow.400" p={3} borderRadius="full">
-        🔒
-      </Box>
+       <Box
+  as="a"
+  href="https://chainspect.app/dashboard?utm_source=chatgpt.com"
+  target="_blank"  // opens in a new tab
+  bg="yellow.400"
+  p={3}
+  cursor={"pointer"}
+  borderRadius="full"
+  _hover={{ cursor: "pointer", bg: "yellow.500" }}
+>
+  🔒
+</Box>
+      
       <Text color="white" fontWeight="semibold">Secure Platform</Text>
       <Text fontSize="sm" color="whiteAlpha.700" maxW="150px">
         Advanced security measures to protect your assets.
@@ -93,9 +113,19 @@ const Home = () => {
     </VStack>
 
     <VStack spacing={2}>
-      <Box bg="yellow.400" p={3} borderRadius="full">
-        💰
-      </Box>
+            <Box
+  as="a"
+  href="https://chainspect.app/dashboard?utm_source=chatgpt.com"
+  target="_blank"  // opens in a new tab
+  bg="yellow.400"
+  p={3}
+  cursor={"pointer"}
+  borderRadius="full"
+  _hover={{ cursor: "pointer", bg: "yellow.500" }}
+>
+   💰
+</Box>
+     
       <Text color="white" fontWeight="semibold">Low Fees</Text>
       <Text fontSize="sm" color="whiteAlpha.700" maxW="150px">
         Enjoy trading with competitive and transparent fees.
@@ -103,9 +133,20 @@ const Home = () => {
     </VStack>
 
     <VStack spacing={2}>
-      <Box bg="yellow.400" p={3} borderRadius="full">
-        📊
-      </Box>
+
+              <Box
+  as="a"
+  href="https://chainspect.app/dashboard?utm_source=chatgpt.com"
+  target="_blank"  // opens in a new tab
+  bg="yellow.400"
+  p={3}
+  cursor={"pointer"}
+  borderRadius="full"
+  _hover={{ cursor: "pointer", bg: "yellow.500" }}
+>
+    📊
+</Box>
+     
       <Text color="white" fontWeight="semibold">Expert Insights</Text>
       <Text fontSize="sm" color="whiteAlpha.700" maxW="150px">
         Get guidance from experienced crypto traders.
