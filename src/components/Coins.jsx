@@ -65,16 +65,16 @@ const Coins = () => {
                 colorScheme="yellow"  // gold selection
                 bg="white"             // card color white
                 borderRadius="md"
-                px={6}
+                px={1}
                 py={3}
                 border="1px solid"
                 borderColor="gray.300"
                 _hover={{
                   bg: "gray.100",
-                  transform: "scale(1.05)",
+                  transform: "scale(1.09)",
                 }}
               >
-                <Text color="black" fontWeight="semibold">
+                <Text color="white" fontWeight="semibold">
                   {cur}
                 </Text>
               </Radio>

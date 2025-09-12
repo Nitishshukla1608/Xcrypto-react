@@ -7,13 +7,17 @@ const CoinCard = ({ id, name, img, symbol, price, currencySymbol = "₹" }) => (
     <VStack
       w={"52"}
       shadow={"lg"}
-      p={"8"}
+     color = {"white"}
+    p={"8"}
+    m ={"4"}
       borderRadius={"lg"}
       transition={"all 0.3s"}
-      m={"4"}
+       border="1px solid rgba(230, 194, 117, 0.2)"
+       bg="rgba(158, 239, 241, 0.1)"
       css={{
         "&:hover": {
-          transform: "scale(1.1)",
+          transform: "scale(1.08)",
+        shadow: "0 4px 30px rgba(0,0,0,0.5)"
         },
       }}
     >
