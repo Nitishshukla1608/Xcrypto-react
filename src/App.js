@@ -1,28 +1,43 @@
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
+import { useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import Home from "./components/Home";
 import Header from "./components/Header";
 import CoinDetails from "./components/CoinDetails";
 import Exchanges from "./components/Exchanges";
 import Coins from "./components/Coins";
-import Footer from "./components/Footer"
+import Footer from "./components/Footer";
 import XcryptoAuth from "./components/XcryptoAuth";
-import InsightsPage from "./components/InsightsPage"
+import InsightsPage from "./components/InsightsPage";
 
 function App() {
+  useEffect(() => {
+    // Append Tidio script
+    const script = document.createElement("script");
+    script.src = "//code.tidio.co/aclyjagqixdudf4xtskia8qdfkkxttpt.js"; // 🔴 Replace with your actual Tidio code
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      // Cleanup on unmount (not strictly required for global widget, but safe)
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <Router>
-      <Header/>
+      <Header />
       <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/coins" element={<Coins/>}/>
-        <Route path="/exchanges" element={<Exchanges/>}/>
-        <Route path="/coin/:id" element={<CoinDetails/>}/>
-                <Route path="/authform" element={<XcryptoAuth/>}/>
-<Route path="/InsightsPage" element={<InsightsPage/>}/>
+        <Route path="/" element={<Home />} />
+        <Route path="/coins" element={<Coins />} />
+        <Route path="/exchanges" element={<Exchanges />} />
+        <Route path="/coin/:id" element={<CoinDetails />} />
+        <Route path="/authform" element={<XcryptoAuth />} />
+        <Route path="/InsightsPage" element={<InsightsPage />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </Router>
-  )
+  );
 }
 
 export default App;
