@@ -71,314 +71,324 @@ const Home = () => {
   </Text>
 
   {/* Features / Highlights */}
-  <HStack spacing={10} wrap="wrap" justify="center" >
-    <VStack spacing={2}>
-     <Box
-  as="a"
-  href="https://chainspect.app/dashboard?utm_source=chatgpt.com"
-  target="_blank"  // opens in a new tab
-  bg="yellow.400"
-  p={3}
-  cursor={"pointer"}
-  borderRadius="full"
-  _hover={{ cursor: "pointer", bg: "yellow.500" }}
+  <Stack
+  direction={{ base: "column", md: "row" }}
+  spacing={{ base: 8, md: 10 }}
+  justify="center"
+  align="center"
+  wrap="wrap"
+  w="full"
 >
-  🚀
-</Box>
+  {/* Fast Transactions */}
+  <VStack spacing={2} textAlign="center" maxW="200px">
+    <Box
+      as="a"
+      href="https://chainspect.app/dashboard?utm_source=chatgpt.com"
+      target="_blank"
+      bg="yellow.400"
+      p={3}
+      cursor="pointer"
+      borderRadius="full"
+      _hover={{ bg: "yellow.500" }}
+    >
+      🚀
+    </Box>
+    <Text color="white" fontWeight="semibold">
+      Fast Transactions
+    </Text>
+    <Text fontSize="sm" color="whiteAlpha.700">
+      Execute trades instantly with minimal delay.
+    </Text>
+  </VStack>
 
-      <Text color="white" fontWeight="semibold">Fast Transactions</Text>
-      <Text fontSize="sm" color="whiteAlpha.700" maxW="150px">
-        Execute trades instantly with minimal delay.
-      </Text>
-    </VStack>
+  {/* Secure Platform */}
+  <VStack spacing={2} textAlign="center" maxW="200px">
+    <Box
+      as="a"
+      href="https://chainspect.app/dashboard?utm_source=chatgpt.com"
+      target="_blank"
+      bg="yellow.400"
+      p={3}
+      cursor="pointer"
+      borderRadius="full"
+      _hover={{ bg: "yellow.500" }}
+    >
+      🔒
+    </Box>
+    <Text color="white" fontWeight="semibold">
+      Secure Platform
+    </Text>
+    <Text fontSize="sm" color="whiteAlpha.700">
+      Advanced security measures to protect your assets.
+    </Text>
+  </VStack>
 
-    <VStack spacing={2}>
-       <Box
-  as="a"
-  href="https://chainspect.app/dashboard?utm_source=chatgpt.com"
-  target="_blank"  // opens in a new tab
-  bg="yellow.400"
-  p={3}
-  cursor={"pointer"}
-  borderRadius="full"
-  _hover={{ cursor: "pointer", bg: "yellow.500" }}
->
-  🔒
-</Box>
-      
-      <Text color="white" fontWeight="semibold">Secure Platform</Text>
-      <Text fontSize="sm" color="whiteAlpha.700" maxW="150px">
-        Advanced security measures to protect your assets.
-      </Text>
-    </VStack>
+  {/* Low Fees */}
+  <VStack spacing={2} textAlign="center" maxW="200px">
+    <Box
+      as="a"
+      href="https://chainspect.app/dashboard?utm_source=chatgpt.com"
+      target="_blank"
+      bg="yellow.400"
+      p={3}
+      cursor="pointer"
+      borderRadius="full"
+      _hover={{ bg: "yellow.500" }}
+    >
+      💰
+    </Box>
+    <Text color="white" fontWeight="semibold">
+      Low Fees
+    </Text>
+    <Text fontSize="sm" color="whiteAlpha.700">
+      Enjoy trading with competitive and transparent fees.
+    </Text>
+  </VStack>
 
-    <VStack spacing={2}>
-            <Box
-  as="a"
-  href="https://chainspect.app/dashboard?utm_source=chatgpt.com"
-  target="_blank"  // opens in a new tab
-  bg="yellow.400"
-  p={3}
-  cursor={"pointer"}
-  borderRadius="full"
-  _hover={{ cursor: "pointer", bg: "yellow.500" }}
->
-   💰
-</Box>
-     
-      <Text color="white" fontWeight="semibold">Low Fees</Text>
-      <Text fontSize="sm" color="whiteAlpha.700" maxW="150px">
-        Enjoy trading with competitive and transparent fees.
-      </Text>
-    </VStack>
+  {/* Expert Insights */}
+  <VStack spacing={2} textAlign="center" maxW="200px">
+    <Box
+      as="a"
+      href="https://chainspect.app/dashboard?utm_source=chatgpt.com"
+      target="_blank"
+      bg="yellow.400"
+      p={3}
+      cursor="pointer"
+      borderRadius="full"
+      _hover={{ bg: "yellow.500" }}
+    >
+      📊
+    </Box>
+    <Text color="white" fontWeight="semibold">
+      Expert Insights
+    </Text>
+    <Text fontSize="sm" color="whiteAlpha.700">
+      Get guidance from experienced crypto traders.
+    </Text>
+  </VStack>
+</Stack>
 
-    <VStack spacing={2}>
-
-              <Box
-  as="a"
-  href="https://chainspect.app/dashboard?utm_source=chatgpt.com"
-  target="_blank"  // opens in a new tab
-  bg="yellow.400"
-  p={3}
-  cursor={"pointer"}
-  borderRadius="full"
-  _hover={{ cursor: "pointer", bg: "yellow.500" }}
->
-    📊
-</Box>
-     
-      <Text color="white" fontWeight="semibold">Expert Insights</Text>
-      <Text fontSize="sm" color="whiteAlpha.700" maxW="150px">
-        Get guidance from experienced crypto traders.
-      </Text>
-    </VStack>
-  </HStack>
 </VStack>
 
 
 
-<VStack w="full" spacing={28} py={16} >
-  {/* Premium Section */}
-  <VStack
-    w="full"
-    spacing={10}
-    textAlign="center"
-    py={16}
-    borderRadius="30px"
-    bg="blackAlpha.900"
-    boxShadow="14px 10px 15px rgba(184, 158, 46, 0.3)"
-  >
-    <Text color="white" fontWeight="bold" fontSize="3xl">
-      Premium Plans
-    </Text>
-    <Text fontSize="md" letterSpacing="widest" color="whiteAlpha.800" maxW="600px">
-    Choose the perfect plan for your crypto trading journey. Get exclusive features and maximize your profits!
-  </Text>
+ <VStack w="full" spacing={{ base: 16, md: 28 }} py={16}>
+      {/* Premium Section */}
+      <VStack
+        w="full"
+        spacing={10}
+        textAlign="center"
+        py={16}
+        borderRadius="30px"
+        bg="blackAlpha.900"
+        boxShadow="14px 10px 15px rgba(184, 158, 46, 0.3)"
+      >
+        <Text color="white" fontWeight="bold" fontSize={{ base: "2xl", md: "3xl" }}>
+          Premium Plans
+        </Text>
+        <Text
+          fontSize={{ base: "sm", md: "md" }}
+          letterSpacing="widest"
+          color="whiteAlpha.800"
+          maxW="600px"
+          px={4}
+        >
+          Choose the perfect plan for your crypto trading journey. Get exclusive
+          features and maximize your profits!
+        </Text>
 
+        {/* Plans */}
+        <SimpleGrid
+          columns={{ base: 1, sm: 2, lg: 3 }}
+          spacing={{ base: 8, md: 10 }}
+          justifyItems="center"
+        >
+          {/* Silver Plan */}
+          <VStack
+            spacing={4}
+            p={6}
+            borderRadius="xl"
+            bg="gray.700"
+            w={{ base: "full", sm: "64", md: "72" }}
+            boxShadow="blackAlpha.900"
+            transition="all 0.3s"
+            _hover={{
+              transform: "scale(1.05)",
+              boxShadow: "0 0 25px rgba(255,255,255,0.3)",
+            }}
+          >
+            <Text color="gray.300" fontWeight="bold" fontSize="xl">
+              Silver
+            </Text>
+            <Text color="white" fontWeight="bold" fontSize="2xl">
+              $9.99/mo
+            </Text>
+            <VStack spacing={2} align="start">
+              <Text color="whiteAlpha.800">📈 Basic Market Insights</Text>
+              <Text color="whiteAlpha.800">💱 Access to Limited Coins</Text>
+              <Text color="whiteAlpha.800">🔔 Price Alerts</Text>
+            </VStack>
+            <Text
+              mt={4}
+              color="yellow.400"
+              fontWeight="bold"
+              cursor="pointer"
+              mb={4}
+            >
+              Subscribe
+            </Text>
+          </VStack>
 
+          {/* Gold Plan */}
+          <VStack
+            spacing={4}
+            p={6}
+            borderRadius="xl"
+            bg="yellow.600"
+            w={{ base: "full", sm: "64", md: "72" }}
+            boxShadow="0 0 20px rgba(255,215,0,0.3)"
+            transition="all 0.3s"
+            _hover={{
+              transform: "scale(1.05)",
+              boxShadow: "0 0 25px rgba(255,215,0,0.5)",
+            }}
+          >
+            <Text color="white" fontWeight="bold" fontSize="xl">
+              Gold
+            </Text>
+            <Text color="white" fontWeight="bold" fontSize="2xl">
+              $19.99/mo
+            </Text>
+            <VStack spacing={2} align="start">
+              <Text color="white">📈 Advanced Market Insights</Text>
+              <Text color="white">💱 Access to All Coins</Text>
+              <Text color="white">🔔 Custom Price Alerts</Text>
+              <Text color="white">📊 Portfolio Tracking</Text>
+            </VStack>
+            <Text mt={4} color="black" fontWeight="bold" cursor="pointer">
+              Subscribe
+            </Text>
+          </VStack>
 
-  <HStack spacing={6} wrap="wrap" justify="center" >
-    {/* Silver Plan */}
-    <VStack
-      spacing={4}
-      p={0}
-      borderRadius="xl"
-      bg="gray.700"
-      w="72"
-      boxShadow="blackAlpha.900"
-      transition="all 0.3s"
-      _hover={{ transform: "scale(1.05)", boxShadow: "0 0 25px rgba(255,255,255,0.3)" }}
-    >
-      <Text color="gray.300" fontWeight="bold" fontSize="xl">
-        Silver
-      </Text>
-      <Text color="white" fontWeight="bold" fontSize="2xl">
-        $9.99/mo
-      </Text>
-      <VStack spacing={2} align="start">
-        <Text color="whiteAlpha.800">📈 Basic Market Insights</Text>
-        <Text color="whiteAlpha.800">💱 Access to Limited Coins</Text>
-        <Text color="whiteAlpha.800">🔔 Price Alerts</Text>
+          {/* Diamond Plan */}
+          <VStack
+            spacing={4}
+            p={6}
+            borderRadius="xl"
+            bg="blue.500"
+            w={{ base: "full", sm: "64", md: "72" }}
+            boxShadow="0 0 20px rgba(173,216,230,0.3)"
+            transition="all 0.3s"
+            _hover={{
+              transform: "scale(1.05)",
+              boxShadow: "0 0 25px rgba(173,216,230,0.5)",
+            }}
+          >
+            <Text color="white" fontWeight="bold" fontSize="xl">
+              Diamond
+            </Text>
+            <Text color="white" fontWeight="bold" fontSize="2xl">
+              $49.99/mo
+            </Text>
+            <VStack spacing={2} align="start">
+              <Text color="white">📈 Real-Time Market Analysis</Text>
+              <Text color="white">💱 Access to All Coins & ICOs</Text>
+              <Text color="white">🔔 Priority Price Alerts</Text>
+              <Text color="white">📊 Portfolio + Advanced Analytics</Text>
+              <Text color="white">🤝 Personal Trading Guidance</Text>
+            </VStack>
+            <Text
+              mt={4}
+              color="white"
+              bg="blackAlpha.800"
+              p={2}
+              borderRadius="md"
+              fontWeight="bold"
+              cursor="pointer"
+            >
+              Subscribe
+            </Text>
+          </VStack>
+        </SimpleGrid>
       </VStack>
-      <Text mt={4} color="yellow.400" fontWeight="bold" cursor="pointer" mb={20}>
-        Subscribe
+
+      {/* Members Section */}
+      <Text
+        color="white"
+        fontWeight="bold"
+        fontSize={{ base: "2xl", md: "3xl" }}
+        mb={4}
+      >
+        Our Members
       </Text>
+
+      <SimpleGrid
+        columns={{ base: 1, md: 2 }}
+        spacing={{ base: 12, md: 16, lg: 20 }}
+        w={{ base: "90%", md: "80%", lg: "75%" }}
+        justifyItems="center"
+      >
+        {/* Developer */}
+        <HStack align="center" spacing={4} w="full">
+          <Avatar boxSize={{ base: "20", md: "28" }} src={img1} />
+          <VStack align="start" spacing={1} maxW="400px">
+            <Text color="white" fontWeight="semibold">
+              Developer
+            </Text>
+            <Text color="yellow.500">Nitish Kumar Shukla</Text>
+            <Text fontSize="sm" letterSpacing="widest" color="whiteAlpha.800">
+              Full-stack developer building efficient, scalable web apps and
+              turning ideas into functional digital solutions.
+            </Text>
+          </VStack>
+        </HStack>
+
+        {/* API Handler */}
+        <HStack align="center" spacing={4} w="full">
+          <Avatar boxSize={{ base: "20", md: "28" }} src={img2} />
+          <VStack align="start" spacing={1} maxW="400px">
+            <Text color="white" fontWeight="semibold">
+              API Handler
+            </Text>
+            <Text color="yellow.500">Om Jee Rai</Text>
+            <Text fontSize="sm" letterSpacing="widest" color="whiteAlpha.800">
+              API handler creating efficient, reliable endpoints for seamless
+              communication and smooth data exchange between applications.
+            </Text>
+          </VStack>
+        </HStack>
+
+        {/* UI Designer */}
+        <HStack align="center" spacing={4} w="full">
+          <Avatar boxSize={{ base: "20", md: "28" }} src={img3} />
+          <VStack align="start" spacing={1} maxW="400px">
+            <Text color="white" fontWeight="semibold">
+              UI Designer
+            </Text>
+            <Text color="yellow.500">Pakhi Tyagi</Text>
+            <Text fontSize="sm" letterSpacing="widest" color="whiteAlpha.800">
+              UI designer crafting intuitive, visually appealing interfaces that
+              enhance user experience and bring ideas to life.
+            </Text>
+          </VStack>
+        </HStack>
+
+        {/* Content Writer */}
+        <HStack align="center" spacing={4} w="full">
+          <Avatar boxSize={{ base: "20", md: "28" }} src={img4} />
+          <VStack align="start" spacing={1} maxW="400px">
+            <Text color="white" fontWeight="semibold">
+              Content Writer
+            </Text>
+            <Text color="yellow.500">Palak Srivastav</Text>
+            <Text fontSize="sm" letterSpacing="widest" color="whiteAlpha.800">
+              Content writer creating engaging, clear, and impactful content
+              that connects with audiences and communicates ideas effectively.
+            </Text>
+          </VStack>
+        </HStack>
+      </SimpleGrid>
     </VStack>
-
-    {/* Gold Plan */}
-    <VStack
-      spacing={4}
-      p={6}
-      borderRadius="xl"
-      bg="yellow.600"
-      w="72"
-      boxShadow="0 0 20px rgba(255,215,0,0.3)"
-      transition="all 0.3s"
-      _hover={{ transform: "scale(1.05)", boxShadow: "0 0 25px rgba(255,215,0,0.5)" }}
-    >
-      <Text color="white" fontWeight="bold" fontSize="xl">
-        Gold
-      </Text>
-      <Text color="white" fontWeight="bold" fontSize="2xl">
-        $19.99/mo
-      </Text>
-      <VStack spacing={2} align="start">
-        <Text color="white">📈 Advanced Market Insights</Text>
-        <Text color="white">💱 Access to All Coins</Text>
-        <Text color="white">🔔 Custom Price Alerts</Text>
-        <Text color="white">📊 Portfolio Tracking</Text>
-      </VStack>
-      <Text mt={4} color="black" fontWeight="bold" cursor="pointer">
-        Subscribe
-      </Text>
-    </VStack>
-
-    {/* Diamond Plan */}
-    <VStack
-      spacing={4}
-      p={6}
-      borderRadius="xl"
-      bg="blue.500"
-      w="72"
-      boxShadow="0 0 20px rgba(173,216,230,0.3)"
-      transition="all 0.3s"
-      _hover={{ transform: "scale(1.05)", boxShadow: "0 0 25px rgba(173,216,230,0.5)" }}
-    >
-      <Text color="white" fontWeight="bold" fontSize="xl">
-        Diamond
-      </Text>
-      <Text color="white" fontWeight="bold" fontSize="2xl">
-        $49.99/mo
-      </Text>
-      <VStack spacing={2} align="start">
-        <Text color="white">📈 Real-Time Market Analysis</Text>
-        <Text color="white">💱 Access to All Coins & ICOs</Text>
-        <Text color="white">🔔 Priority Price Alerts</Text>
-        <Text color="white">📊 Portfolio + Advanced Analytics</Text>
-        <Text color="white">🤝 Personal Trading Guidance</Text>
-      </VStack>
-      <Text mt={4} color="white" bg="blackAlpha.800" p={2} borderRadius="md" fontWeight="bold" cursor="pointer">
-        Subscribe
-      </Text>
-    </VStack>
-  </HStack>
-  </VStack>
-
-
- <Text color={"white"} fontWeight={"bold"} fontSize="3xl" mb={"0"}>
-    Our Members
-  </Text>
-  {/* Team Members */}
-  <SimpleGrid
-    columns={{ base: 1, md: 2 }}
-    spacing={120}
-    w="75%"
-    justifyItems="center"
-  >
-           <HStack align="center" spacing={6}>
-  {/* Avatar */}
-  <Avatar boxSize="28" src={img1} />  {/* increased size */}
-
-  {/* Texts: Role + Name + Bio */}
-  <VStack align="start" spacing={1} maxW="400px">
-    <VStack align="start" spacing={-0.5} maxW="400px"><Text color="white" fontWeight="semibold">
-      Developer
-    </Text>
-    <Text color="yellow.500">Nitish Kumar Shukla</Text>
-    </VStack>
-
-    {/* Bio right under role/name */}
-    <Text
-      fontSize="sm"
-      letterSpacing="widest"
-      color="whiteAlpha.800"
-    >
-Full-stack developer building efficient, scalable web apps and turning ideas into functional digital solutions
-    </Text>
-  </VStack>
-</HStack>
-
-
-
-
-
-<HStack align="center" spacing={6}>
-  {/* Avatar */}
-  <Avatar boxSize="28" src={img2} />  {/* increased size */}
-
-  {/* Texts: Role + Name + Bio */}
-  <VStack align="start" spacing={1} maxW="400px">
-    <VStack align="start" spacing={-0.5} maxW="400px"><Text color="white" fontWeight="semibold">
-      API Handler
-    </Text>
-    <Text color="yellow.500">Om Jee Rai</Text>
-    </VStack>
-
-    {/* Bio right under role/name */}
-    <Text
-      fontSize="sm"
-      letterSpacing="widest"
-      color="whiteAlpha.800"
-    >
-      API handler creating efficient, reliable endpoints for seamless communication and smooth data exchange between applications.
-    </Text>
-  </VStack>
-</HStack>
-
-
-
-
-
-
-        <HStack align="center" spacing={6}>
-  {/* Avatar */}
-  <Avatar boxSize="28" src={img3} />  {/* increased size */}
-
-  {/* Texts: Role + Name + Bio */}
-  <VStack align="start" spacing={1} maxW="400px">
-    <VStack align="start" spacing={-0.5} maxW="400px"><Text color="white" fontWeight="semibold">
-     UI Designer
-    </Text>
-    <Text color="yellow.500">Pakhi Tyagi</Text>
-    </VStack>
-
-    {/* Bio right under role/name */}
-    <Text
-      fontSize="sm"
-      letterSpacing="widest"
-      color="whiteAlpha.800"
-    >
-    UI designer crafting intuitive, visually appealing interfaces that enhance user experience and bring ideas to life.
-    </Text>
-  </VStack>
-</HStack>
-
-
-          <HStack align="center" spacing={6}>
-  {/* Avatar */}
-  <Avatar boxSize="28" src={img4} />  {/* increased size */}
-
-  {/* Texts: Role + Name + Bio */}
-  <VStack align="start" spacing={1} maxW="400px">
-    <VStack align="start" spacing={-0.5} maxW="400px"><Text color="white" fontWeight="semibold">
-      Content writer
-    </Text>
-    <Text color="yellow.500">Palak Srivastav</Text>
-    </VStack>
-
-    {/* Bio right under role/name */}
-    <Text
-      fontSize="sm"
-      letterSpacing="widest"
-      color="whiteAlpha.800"
-    >
- Content writer creating engaging, clear, and impactful content that connects with audiences and communicates ideas effectively.
-    </Text>
-  </VStack>
-</HStack>
-
-  </SimpleGrid>
-</VStack>
 
       </Stack>
     </Box>
