@@ -12,5 +12,6 @@ root.render(
     </ChakraProvider>
   </React.StrictMode>
 );
+// yahan hamaraa API server hai jo API se data fetch karega
 
 export const server  = `https://api.coingecko.com/api/v3`;

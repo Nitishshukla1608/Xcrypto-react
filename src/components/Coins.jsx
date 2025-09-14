@@ -116,7 +116,5 @@ const Coins = () => {
     )}
   </Container>
 );
-
 };
-
 export default Coins;
