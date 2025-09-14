@@ -7,6 +7,7 @@ import {
   onAuthStateChanged
 } from "firebase/auth";
 
+const [login, setLogin] = useState(null);
 // Signup
 export const signup = async (email, password) => {
   try {
@@ -24,6 +25,7 @@ export const signup = async (email, password) => {
 export const login = async (email, password) => {
   try {
     return await signInWithEmailAndPassword(auth, email, password);
+      setLogin(true);
   } catch (error) {
     // Handle reCAPTCHA-related errors
     if (error.code === 'auth/operation-not-allowed') {

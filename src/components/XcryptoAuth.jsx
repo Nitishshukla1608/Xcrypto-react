@@ -54,10 +54,10 @@ const XcryptoAuth = () => {
       setPassword("");
       setConfirmPassword("");
       setActiveTab("login");
-      // Redirect to home page after 3 seconds
+      // Redirect to home page after 500  miliseconds
       setTimeout(() => {
         navigate("/");
-      }, 3000);
+      }, 500);
     } catch (err) {
       console.error("Signup error:", err);
       if (err.code === 'auth/email-already-in-use') {
@@ -89,10 +89,10 @@ const XcryptoAuth = () => {
       // Reset form
       setLoginEmail("");
       setLoginPassword("");
-      // Redirect to home page after 2 seconds
+      // Redirect to home page after 500 miliseconds
       setTimeout(() => {
         navigate("/home");
-      }, 2000);
+      }, 500);
     } catch (err) {
       console.error("Login error:", err);
       if (err.code === 'auth/user-not-found') {

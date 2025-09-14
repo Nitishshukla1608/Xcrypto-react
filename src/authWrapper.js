@@ -7,6 +7,7 @@ import {
   onAuthStateChanged
 } from "firebase/auth";
 
+
 // Custom auth wrapper that handles reCAPTCHA errors
 class AuthWrapper {
   constructor() {
@@ -66,6 +67,9 @@ class AuthWrapper {
     try {
       await signOut(this.auth);
       console.log('Logout successful');
+      setTimeout(() => {
+        
+      }, 500);
     } catch (error) {
       console.error('Logout error:', error);
       throw error;

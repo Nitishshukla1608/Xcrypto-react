@@ -11,6 +11,7 @@ import XcryptoAuth from "./components/XcryptoAuth";
 import InsightsPage from "./components/InsightsPage";
 import { AuthProvider } from "./AuthContext";
 import "./recaptchaConfig"; // Initialize reCAPTCHA configuration
+import ProfileSection from "./components/ProfileSection";
 
 function App() {
   // Global error handler for reCAPTCHA errors
@@ -55,6 +56,7 @@ function App() {
           <Route path="/coin/:id" element={<CoinDetails />} />
           <Route path="/authform" element={<XcryptoAuth />} />
           <Route path="/InsightsPage" element={<InsightsPage />} />
+          <Route path="/profilePage" element={<ProfileSection/>}/>
         </Routes>
         <Footer />
       </Router>
