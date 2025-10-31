@@ -31,18 +31,6 @@ function App() {
       window.removeEventListener('unhandledrejection', handleError);
     };
   }, []);
-  useEffect(() => {
-    // Append Tidio script
-    const script = document.createElement("script");
-    script.src = "//code.tidio.co/aclyjagqixdudf4xtskia8qdfkkxttpt.js"; // 🔴 Replace with your actual Tidio code
-    script.async = true;
-    document.body.appendChild(script);
-
-    return () => {
-      // Cleanup on unmount (not strictly required for global widget, but safe)
-      document.body.removeChild(script);
-    };
-  }, []);
 
   return (
     <AuthProvider>
@@ -56,7 +44,7 @@ function App() {
           <Route path="/coin/:id" element={<CoinDetails />} />
           <Route path="/authform" element={<XcryptoAuth />} />
           <Route path="/InsightsPage" element={<InsightsPage />} />
-          <Route path="/profilePage" element={<ProfileSection/>}/>
+          <Route path="/profilePage" element={<ProfileSection />} />
         </Routes>
         <Footer />
       </Router>
