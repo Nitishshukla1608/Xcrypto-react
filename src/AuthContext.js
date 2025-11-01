@@ -1,39 +1,17 @@
-// Authentication Context to manage auth state
-import React, { createContext, useContext, useEffect, useState } from 'react';
-import { subscribeToAuthChanges } from './authWrapper';
+import React from 'react';
+import { useUser } from '@clerk/clerk-react';
+import { Navigate } from 'react-router-dom';
 
-const AuthContext = createContext();
+export const PrivateRoute = ({ children }) => {
+  const { isSignedIn, isLoaded } = useUser();
 
-export const useAuth = () => {
-  const context = useContext(AuthContext);
-  if (!context) {
-    throw new Error('useAuth must be used within an AuthProvider');
+  if (!isLoaded) {
+    return <div>Loading...</div>;
   }
-  return context;
-};
 
-export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
+  if (!isSignedIn) {
+    return <Navigate to="/sign-in" />;
+  }
 
-  useEffect(() => {
-    const unsubscribe = subscribeToAuthChanges((user) => {
-      setUser(user);
-      setLoading(false);
-    });
-
-    return unsubscribe;
-  }, []);
-
-  const value = {
-    user,
-    loading,
-    isAuthenticated: !!user
-  };
-
-  return (
-    <AuthContext.Provider value={value}>
-      {children}
-    </AuthContext.Provider>
-  );
+  return children;
 };

@@ -1,54 +1,52 @@
-import { useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-
+import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "./components/Home";
 import Header from "./components/Header";
 import CoinDetails from "./components/CoinDetails";
 import Exchanges from "./components/Exchanges";
 import Coins from "./components/Coins";
 import Footer from "./components/Footer";
-import XcryptoAuth from "./components/XcryptoAuth";
 import InsightsPage from "./components/InsightsPage";
-import { AuthProvider } from "./AuthContext";
-import "./recaptchaConfig"; // Initialize reCAPTCHA configuration
+import Blogs from "./components/Blogs";
+import HistoryPage from "./components/HistoryPage";
 import ProfileSection from "./components/ProfileSection";
+import { PrivateRoute } from "./AuthContext";
+import { SignIn, SignUp } from "@clerk/clerk-react";
 
 function App() {
-  // Global error handler for reCAPTCHA errors
-  useEffect(() => {
-    const handleError = (event) => {
-      if (event.error && event.error.message && event.error.message.includes('_getRecaptchaConfig')) {
-        console.warn('reCAPTCHA error caught and handled:', event.error.message);
-        event.preventDefault(); // Prevent the error from crashing the app
-      }
-    };
-
-    window.addEventListener('error', handleError);
-    window.addEventListener('unhandledrejection', handleError);
-
-    return () => {
-      window.removeEventListener('error', handleError);
-      window.removeEventListener('unhandledrejection', handleError);
-    };
-  }, []);
-
   return (
-    <AuthProvider>
-      <Router>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Navigate to="/home" replace />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/coins" element={<Coins />} />
-          <Route path="/exchanges" element={<Exchanges />} />
-          <Route path="/coin/:id" element={<CoinDetails />} />
-          <Route path="/authform" element={<XcryptoAuth />} />
-          <Route path="/InsightsPage" element={<InsightsPage />} />
-          <Route path="/profilePage" element={<ProfileSection />} />
-        </Routes>
-        <Footer />
-      </Router>
-    </AuthProvider>
+    <>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Navigate to="/home" replace />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/coins" element={<Coins />} />
+        <Route path="/exchanges" element={<Exchanges />} />
+        <Route path="/coin/:id" element={<CoinDetails />} />
+        <Route path="/sign-in" element={
+          <div className="min-h-screen flex items-center justify-center bg-background relative overflow-hidden">
+            <div className="absolute w-72 h-72 bg-gradient-to-r from-primary/30 to-accent/30 rounded-full blur-3xl top-10 left-10 animate-pulse" />
+            <div className="absolute w-80 h-80 bg-gradient-to-r from-accent/20 to-primary/20 rounded-full blur-3xl bottom-10 right-10 animate-pulse" />
+            <div className="w-full max-w-md p-6 relative z-10">
+              <SignIn routing="path" path="/sign-in" />
+            </div>
+          </div>
+        } />
+        <Route path="/sign-up" element={
+          <div className="min-h-screen flex items-center justify-center bg-background relative overflow-hidden">
+            <div className="absolute w-72 h-72 bg-gradient-to-r from-primary/30 to-accent/30 rounded-full blur-3xl top-10 left-10 animate-pulse" />
+            <div className="absolute w-80 h-80 bg-gradient-to-r from-accent/20 to-primary/20 rounded-full blur-3xl bottom-10 right-10 animate-pulse" />
+            <div className="w-full max-w-md p-6 relative z-10">
+              <SignUp routing="path" path="/sign-up" />
+            </div>
+          </div>
+        } />
+        <Route path="/InsightsPage" element={<InsightsPage />} />
+        <Route path="/blogs" element={<Blogs />} />
+        <Route path="/history" element={<PrivateRoute><HistoryPage /></PrivateRoute>} />
+        <Route path="/profilePage" element={<PrivateRoute><ProfileSection /></PrivateRoute>} />
+      </Routes>
+      <Footer />
+    </>
   );
 }
 

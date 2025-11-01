@@ -1,27 +1,27 @@
 import React, { useState } from "react";
-import { useAuth } from "../AuthContext";
-import { logout } from "../authWrapper";
+import { useUser, useClerk } from "@clerk/clerk-react";
 import { Mail, Phone, Calendar, MapPin, Hash } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import pic from "../assets/user.png"
 
 
 const ProfileSection = () => {
-  const { user } = useAuth();
+  const { user } = useUser();
+  const { signOut } = useClerk();
   const navigate = useNavigate();
 
   const [editable, setEditable] = useState(false);
   const [profileData, setProfileData] = useState({
-    firstName: "John",
-    lastName: "Doe",
-    email: user?.email || "john.doe@example.com",
-    phone: "+1 (555) 123-4567",
+    firstName: user?.firstName || "John",
+    lastName: user?.lastName || "Doe",
+    email: user?.primaryEmailAddress?.emailAddress || "john.doe@example.com",
+    phone: user?.primaryPhoneNumber?.phoneNumber || "+1 (555) 123-4567",
     dob: "1990-01-15",
     address: "123 Main Street",
     city: "New York",
     zip: "10001",
-    userId: user?.uid || "UID-12345",
-    photo: user?.photoURL || "https://via.placeholder.com/120",
+    userId: user?.id || "UID-12345",
+    photo: user?.imageUrl || "https://via.placeholder.com/120",
   });
 
   const handleChange = (field, value) => {
@@ -31,7 +31,7 @@ const ProfileSection = () => {
   // logout and redirect to home
   const handleLogout = async () => {
     try {
-      await logout();
+      await signOut();
       navigate("/");
     } catch (error) {
       console.error("Logout failed:", error);

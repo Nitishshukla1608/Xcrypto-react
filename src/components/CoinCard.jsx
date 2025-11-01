@@ -7,17 +7,17 @@ const CoinCard = ({ id, name, img, symbol, price, currencySymbol = "₹" }) => (
     <VStack
       w={"52"}
       shadow={"lg"}
-     color = {"white"}
-    p={"8"}
-    m ={"4"}
+      color={"white"}
+      p={"8"}
+      m={{ base: "4", md: "6" }} // ✅ increased margin (responsive)
       borderRadius={"lg"}
       transition={"all 0.3s"}
-       border="1px solid rgba(230, 194, 117, 0.2)"
-       bg="rgba(158, 239, 241, 0.1)"
+      border="1px solid rgba(230, 194, 117, 0.2)"
+      bg="rgba(158, 239, 241, 0.1)"
       css={{
         "&:hover": {
           transform: "scale(1.08)",
-        shadow: "0 4px 30px rgba(0,0,0,0.5)"
+          boxShadow: "0 4px 30px rgba(0,0,0,0.5)",
         },
       }}
     >
@@ -27,6 +27,7 @@ const CoinCard = ({ id, name, img, symbol, price, currencySymbol = "₹" }) => (
         h={"10"}
         objectFit={"contain"}
         alt={"Exchange"}
+        mb={"3"} // ✅ adds spacing below image
       />
       <Heading size={"md"} noOfLines={1}>
         {symbol}
