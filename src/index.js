@@ -22,8 +22,8 @@ const darkTheme = {
   baseTheme: 'dark',
   variables: {
     colorPrimary: '#6C47FF',
-    colorBackground: '#0f0f12',
-    colorText: 'white',
+    colorBackground: '#FFFFFF',
+    colorText: 'black',
     colorInputBackground: '#FFFFFF',
     colorInputText: 'white',
   },

@@ -8,7 +8,6 @@ import Footer from "./components/Footer";
 import InsightsPage from "./components/InsightsPage";
 import Blogs from "./components/Blogs";
 import HistoryPage from "./components/HistoryPage";
-import ProfileSection from "./components/ProfileSection";
 import { PrivateRoute } from "./AuthContext";
 import { SignIn, SignUp } from "@clerk/clerk-react";
 
@@ -43,7 +42,7 @@ function App() {
         <Route path="/InsightsPage" element={<InsightsPage />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/history" element={<PrivateRoute><HistoryPage /></PrivateRoute>} />
-        <Route path="/profilePage" element={<PrivateRoute><ProfileSection /></PrivateRoute>} />
+        
       </Routes>
       <Footer />
     </>
